@@ -1,0 +1,16 @@
+{% extends 'base/layout.html' %}
+
+{% block title %}
+    Results for {{q}}
+{% endblock %}
+
+{%block body %}
+    <h1>Results for {{q}}</h1>
+    <ul>
+    {% for k in results %}
+    <li><a href="{% url 'wiki-entry' title=k %}">{{k}}</a></li>
+    {% empty %}
+        <li>Sorry We found No Encyclopedie That Matches {{ q }}</li>
+    {% endfor%}
+    </ul>
+{% endblock %}

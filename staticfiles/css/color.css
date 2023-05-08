@@ -1,0 +1,39 @@
+h2{
+    color:#fe7062;
+    color:#afc7ff;
+    color:#1a0f91;
+    color:#09005d;
+    color:#dae3fe;
+    color:#7d97f4;
+    color:#91b3fa;
+}
+
+
+h1{
+    color:#7DD3FC ;
+    color: #0EA5E9;
+    color: #3F9AEE;
+    color:#19B8FF ;
+    color: #111827;
+    color: #0080ff ;
+
+        --tw-prose-body: #374151;
+        --tw-prose-lead: #4b5563;
+        --tw-prose-counters: #6b7280;
+        --tw-prose-bullets: #d1d5db;
+        --tw-prose-hr: #e5e7eb;
+        --tw-prose-pre-bg: #1f2937;
+        --tw-prose-invert-headings: #fff;       
+        --tw-prose-invert-quotes: #f3f4f6;
+        --tw-prose-invert-captions: #9ca3af;
+        --tw-prose-invert-pre-bg: rgb(0 0 0/50%);
+ 
+
+        font-size: 1rem;
+        line-height: 1.75
+ 
+    
+
+
+    /* #7dd3fc */
+}

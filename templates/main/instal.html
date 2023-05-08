@@ -1,0 +1,174 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>download</title>
+
+    <!-- font awesome cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- swiper css link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <!-- css file -->
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+</head>
+<body>
+  <!-- header start -->
+  <header class="header">
+     <!-- <a href="#" class="logo"> <i class="fas fa-lightbulb">ore</i></a> -->
+     <img src="image/logo navbar.png" alt="" class="logo">
+    <nav class="navbar">
+      <div id="close-navbar" class="fas fa-times"></div>
+      <div id="close-navbar" class="fas fa-times"></div>
+      <a href="{% url 'home' %}" class="link">home</a>
+      <a href="{% url 'about'%}" class="link">about</a>
+      <a href="{% url 'doc'%}" class="link">documentation</a>
+      <a href="{% url 'contact'%}" class="link">contact</a>
+      <a href="{% url 'instal'%}" class="link">download</a>
+    </nav>
+    <div class="icons">
+        <div id="account-btn" class="fas fa-user"></div>
+        <div id="menu-btn" class="fas fa-bars"></div>
+        
+    </div>
+  </header>
+   <!-- begin account form -->
+   <div class="account-form">
+    <div id="close-form" class="fas fa-times"></div>
+    {% if request.user.is_authenticated  %}
+    {{request.user.email}}
+    <div class="buttons">
+      <span class="btn active login-btn">Hello</span>
+      <span class="btn register-btn">Hi</span>
+      <a href="{% url 'logout' %}">logout</a>
+    </div>
+        {% else %}
+        <div class="buttons">
+          <span class="btn active login-btn">login</span>
+          <span class="btn register-btn">register</span>
+        </div>
+    <form class="login-form active" action="{% url 'login' %}" method="POST">
+      <h3>login now</h3>
+      {% csrf_token %}<br>
+      <input  name="username" type="username" placeholder="enter your username" class="box"> 
+
+      <input name="password" type="password" placeholder="enter your password" class="box">
+      {% for message in messages %}
+        <p>{{message}}</p> 
+      {%endfor %}
+      <div class="flex">
+        <input type="checkbox" name="" id="remember-me"> 
+
+        <label for="remember-me">remember me</label>
+        <a href="#">forgot password?</a>
+      </div>
+      <input type="submit" value="login now" class="btn">
+    </form>
+
+    <form class="register-form" action="" method="POST">
+      <h3>register now</h3>
+      {% csrf_token %}<br>
+
+      <!-- {{form.email}} <br>
+      {{form.username}} <br>
+      {{form.password2}} <br>
+      {{form.password1}} -->
+      <input  name="email" type="email" placeholder="enter your email" class="box"> 
+      <input name="username" type="username" placeholder="Enter your username" class="box"> 
+      <input name="password1" type="password" placeholder="enter your password" class="box">
+      <input name="password2" type="password" placeholder="confirm your password" class="box">
+
+      <input type="submit" value="register now" class="btn">
+    </form>
+    {% endif %}
+    
+  </div>
+  <!-- end account form -->
+  <!-- header end -->
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- footer starts -->
+
+<section class="footer">
+  <div class="box-container">
+
+    <div class="box">
+      <h3> <i class="fas fa-lightbulb"></i> ore </h3> 
+      <p>links of social media, links of social media of our language</p>
+      <div class="share">
+        <a href="#" class="fab fa-facebook-f"></a>
+        <a href="#" class="fab fa-twitter"></a>
+        <a href="#" class="fab fa-github"></a>
+        <a href="#" class="fab fa-linkedin"></a>
+      </div>
+    </div>
+
+    <div class="box">
+      <h3>quick links</h3>
+      <a href="{% url 'home' %}" class="link">home</a>
+      <a href="{% url 'about'%}" class="link">about</a>
+      <a href="{% url 'doc'%}" class="link">documentation</a>
+      <a href="{% url 'contact'%}" class="link">contact</a>
+      <a href="{% url 'instal'%}" class="link">download</a>
+    </div>
+
+    <div class="box">
+      <h3>useful links</h3>
+      <a href="#" class="link">help center</a>
+      <a href="#" class="link">ask questions</a>
+      <a href="#" class="link">send feedback</a>
+      <a href="#" class="link">private policy</a>
+      <a href="#" class="link">terms of use</a>
+    </div>
+
+    <div class="box">
+      <h3>newsletter</h3>
+      <p>subscribe for latest updates</p>
+      <form action="">
+        <input type="email" name="" placeholder="enter your email" id="" class="email"> 
+        <input type="submit" value="subscribe" class="btn">
+      </form>
+    </div>
+
+  </div>
+
+  <div class="credit"> write ur credit here</div>
+</section>
+
+<!-- footer ends  -->
+
+
+
+
+
+
+
+<!-- swiper js link -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<!-- js file -->
+<script src="{% static 'js/js.js'%}"></script>
+
+</body>
+</html>

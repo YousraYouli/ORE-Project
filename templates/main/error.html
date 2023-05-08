@@ -1,0 +1,12 @@
+{% extends 'base/layout.html'%}
+
+{% block title %}
+    {{ error_title }}
+{% endblock %}
+
+
+{% block body %}
+    <h1>{{ error_title }}</h1>
+    <p>{{ error }}</p>
+    <a href="{% url 'encyclopedia:index' %}">Back Home</a>
+{% endblock %}
