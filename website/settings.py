@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'main',
-    'sendemail.apps.SendemailConfig',
+    # 'sendemail.apps.SendemailConfig',
 ]
 
 
