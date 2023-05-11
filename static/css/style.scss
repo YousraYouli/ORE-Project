@@ -655,33 +655,41 @@ section{
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    min-height: 50rem;
+    padding: 10rem;
+    gap: 5rem;
     
-    
-
-    .ctitle{
-        flex:1 1 1cm;
-        border: $border;
-        height: 30rem;
-
-        h3{
-            @include titleText(3rem); 
-            color: $light-white;
-            padding-bottom: 1rem;
-            }
-    
+    a {
+      flex: 1 1 1cm;
+      text-decoration: none;
     }
+    .docs {
+      background: $nav;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 2rem;
+      min-height: 45rem;
+      padding: 5rem;
 
-    .courses{
-        flex:1 1 100rem; 
-        border:$border; 
-        padding:2rem;
-        height: 30rem;
-                   
-        h3{
-        @include titleText(3rem); 
-        color: $light-white;
-        padding-bottom: 1rem;
+      &:hover {
+        background: lighten($nav, 10%);
+        cursor: pointer;
+        .icon, p {
+          transform: translateY(-5px);
         }
+      }
+
+      .icon {
+        font-size: 120px;
+        color: $light-white;
+      }
+
+      p {
+        @include titleText(3rem);
+        color: $light-white;
+      }
     }
 }
 
