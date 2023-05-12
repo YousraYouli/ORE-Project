@@ -67,6 +67,10 @@
         <a href="#">forgot password?</a>
       </div>
       <input type="submit" value="login now" class="btn">
+      
+        <button class="btn btn-primary mb-2">
+            <a href="{% url 'social:begin' 'facebook' %}">Login with Facebook</a>
+        </button>
     </form>
 
     <form class="register-form" action="" method="POST">

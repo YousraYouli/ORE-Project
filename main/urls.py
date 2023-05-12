@@ -21,8 +21,9 @@ urlpatterns = [
         path("doc",views.doc,name="doc"),
         path("origine",views.origine,name="origine"),
       # path("mai",views.mai,name="mai"),
-    #   path("success",views.success,name="success"),
-		
+      # path("success",views.success,name="success"),
+        path("Logil",views.Logil,name="Logil"),
+
   
 ]	
 

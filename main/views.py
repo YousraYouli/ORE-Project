@@ -162,3 +162,7 @@ def search_results (request,query,results):
     if results == ' ':
         return render(request,"main/search.html", {'results': [],'q': query})  
     return render(request, "main/search.html", {'results': results.split(','),'q': query})
+
+# to login via facebook
+def Logil(request):
+    return render(request, 'main/Logil.html')
