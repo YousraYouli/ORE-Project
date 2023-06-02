@@ -1,150 +1,140 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600&display=swap');
-*{
-    font-family: 'Nunito', sans-serif;
-    margin: 0; padding: 0;
-    box-sizing: border-box;
-    outline: none; border: none;
-    transition: all .2s linear;
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600&display=swap");
+* {
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  transition: all 0.2s linear;
 }
 
-img{
-    user-select: none;
+img {
+  user-select: none;
 }
-$blue:#111827;
-$blue-sat:#0EA5E9;
-$light-blue:#b2c8df;
-$light-color:#d1d5db;
-$light-white:#eee;
-$course:#1f2937;
-$black:#6b7280;
-$white:#fff;
-$border: 2px solid $blue-sat ;
-$box-shadow:0 .0rem 1rem $course;
-$nav:#172f51;
-// $blue:#06142E;
-// $blue-sat:#0EA5E9;
-// $light-blue:#b2c8df;
-// $light-color:#f5d7db;
-// $light-white:#eee;
-// $course:#1f2937;
-// $black:#6b7280;
-// $white:#fff;
-// $border: 2px solid $blue-sat ;
-// $box-shadow:0 .5rem 1rem $course;
-
+$blue: #111827;
+$blue-sat: #0ea5e9;
+$light-blue: #b2c8df;
+$light-color: #d1d5db;
+$light-white: #eee;
+$course: #1f2937;
+$black: #6b7280;
+$white: #fff;
+$border: 2px solid $blue-sat;
+$box-shadow: 0 0rem 1rem $course;
+$nav: #172f51;
 
 @mixin grid($val) {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax($val, 1fr));
-    gap:2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($val, 1fr));
+  gap: 2rem;
 }
 
 @mixin titleText($titleSize) {
-    font-size: $titleSize;
-    text-transform: capitalize;
-    color:$course;
-    text-decoration: none;
+  font-size: $titleSize;
+  text-transform: capitalize;
+  color: $course;
+  text-decoration: none;
 }
 
 @mixin graphText($graphSize) {
-    font-size: $graphSize;
-    line-height: 2;
-    color:$blue;
-    text-decoration: none;
+  font-size: $graphSize;
+  line-height: 2;
+  color: $blue;
+  text-decoration: none;
 }
 html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  &::-webkit-scrollbar {
+    width: 1rem;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
 
-    font-size: 62.5%;
-    overflow-x: hidden;
-    &::-webkit-scrollbar{
-         width:1rem;
-    }
-     &::-webkit-scrollbar-track{
-         background: transparent;
-    }
-    
-    &::-webkit-scrollbar-thumb {
-     background: $black;
-    }
-    
+  &::-webkit-scrollbar-thumb {
+    background: $black;
+  }
 }
 body {
-    background-color: $blue;
+  background-color: $blue;
 }
 
-section{
-    padding: 5rem 10%;
+section {
+  padding: 5rem 10%;
 }
 
-.heading-link{
-    text-align: center;
-    background: $course;
-    
-    background-position: center;
+.heading-link {
+  text-align: center;
+  background: $course;
 
-    h3{
-        @include titleText(4rem);
-        color: $light-white;
+  background-position: center;
 
-    }
-
-    P{
-        @include graphText(2rem);
-
-        a{
-            color:$blue-sat;
-            text-decoration: none;
-
-            &:hover{
-                text-decoration: underline;
-            }
-        }
-    }
-}
-
-.heading{
-    text-align: center;
-    margin-bottom: 3rem;
-    @include titleText(5rem);
+  h3 {
+    @include titleText(4rem);
     color: $light-white;
+  }
+
+  P {
+    @include graphText(2rem);
+
+    a {
+      color: $blue-sat;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
 }
 
-.btn{
-    display: inline-block;
-    margin-top: 1rem;
-    padding:1rem 3rem;
-    font-size: 1.8rem;
-    border:$border;
-    background: $light-blue;
-    color:$blue-sat;
-    cursor: pointer;
-    text-transform: capitalize;
-    text-decoration: none;
+.heading {
+  text-align: center;
+  margin-bottom: 3rem;
+  @include titleText(5rem);
+  color: $light-white;
+}
 
-    &:hover {
-        background: $blue-sat;
-        color:$white;
-    }
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 1rem 3rem;
+  font-size: 1.8rem;
+  border: $border;
+  background: $light-blue;
+  color: $blue-sat;
+  cursor: pointer;
+  text-transform: capitalize;
+  text-decoration: none;
+
+  &:hover {
+    background: $blue-sat;
+    color: $white;
+  }
 }
 
 .header {
-    position: sticky;
-    top:0; left:0; right:0;
-    background:$nav;
-    box-shadow: $box-shadow;
-    padding:1rem 10%;
-    display: flex;
-    align-items: center;
-    z-index: 1000;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: $nav;
+  box-shadow: $box-shadow;
+  padding: 1rem 10%;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
 
-    img{
-        height:5rem;
-        width: auto;
-        padding: 0%;
-        margin-right: auto;
-        i{
-                    color:$blue-sat;
-                }
+  img {
+    height: 5rem;
+    width: auto;
+    padding: 0%;
+    margin-right: auto;
+    i {
+      color: $blue-sat;
+    }
     // .logo {
     //     margin-right: auto;
     //     @include titleText(2.5rem);
@@ -153,715 +143,736 @@ section{
     //         color:$blue-sat;
     //     }
     // }
-    }
-    .navbar{
-        position: relative;
-
-        // problem in close nav bar it shouldn't be in navbar with home 
-        #close-navbar{           
-            position: absolute;
-            top: 1.5rem; right: 2rem;
-            font-size: 4rem;
-            cursor: pointer;
-            color: $course;
-            display: none;
-
-            &:hover{
-                transform: rotate( 90deg);
-            }
-        }
-        a {
-            margin-right: 2rem;
-            @include titleText(2rem);
-            color: $white;
-            text-decoration: none;
-            &:hover {
-                color:$blue-sat;
-                text-decoration: underline;
-            }
-        }
-    }
-   .icons div {
-        cursor: pointer;
-        font-size: 2.5rem;
-        color:$light-white;
-        margin-left:1.5rem;
-        &:hover {
-         color:$blue-sat;
-        }
-    }
-    #menu-btn {
-        display: none;
-    }
-}
-
-.account-form{
-    position: fixed;
-    top:0; right:-105%; 
-    width: 35rem;
-    background: $nav;
-    display: flex;
-    flex-flow: column;
-    gap:2rem;
-    justify-content: center;
-    height: 100%;
-    z-index: 1200;
-    padding: 2rem;
-    text-align: center;
-
-    &.active{
-        right: 0;
-        box-shadow: 0 0 0 100vw Orgba(0,0,0,.8);
-    }
-
-    #close-form{
-        position: absolute;
-        top: 1.5rem; right: 2.5rem;
-        font-size: 4rem;
-        cursor: pointer;
-        color: $white;
-        
-
-        &:hover{
-            color: $blue-sat;
-        }  
-    }
-
-    form{
-        // border: $border;
-        background-color: $light-blue;
-        padding: 2rem;
-        display: none;
-        &.active{
-            display: block;
-        }
-        
-        h3{
-            @include titleText(2.5rem);
-            color: $blue;
-            padding-bottom: .5rem;
-            text-transform: uppercase;
-        }
-
-        // input {
-        //     background-color: $light-color;
-        // }
-
-        .box{
-            width: 100%;
-            padding: 1.2rem 1.4rem;
-            border: $border;
-            font-size: 1.6rem;
-            margin: .7rem 0;
-            background-color: $light-blue;
-            &::placeholder{
-                color: $course;
-            }
-
-            &:hover{
-                border-color: $course;
-            }
-        }
-
-        .flex{
-            padding: 1rem 0;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-
-            label {
-                font-size: 1.5rem;
-                color: $course;
-                cursor: pointer;
-            }
-
-            a {
-                font-size: 1.5rem;
-                color: $course;
-                margin-left: auto;
-                text-decoration: none;
-                
-                &:hover {
-                    text-decoration: underline;
-                    color: $blue-sat;
-                }
-            }
-        }
-
-        .btn{
-            width: 100%;
-            background-color: $light-blue;
-            cursor: pointer; 
-
-            &:hover {
-                background: $blue-sat;
-                color:$white;
-            }
-        }
-        
-    }
-
-    .buttons .btn{
-        margin: 0.5rem;
-
-        &.active{
-            background: $blue-sat;
-            color: $white;
-        }
-    }
-}
-
-// home section style 
-
-.home {
-    padding: 0;
-    .slide{
-        display: flex;
-        align-items: center;
-        height: 60rem;
-        background-size: cover !important;
-        background-position: center !important;
-        .content {
-            width: 60rem;
-            h3{
-                 @include titleText(5.5rem);
-                 color: $light-white;
-            }
-
-            p{
-                @include graphText(2rem);
-                color: $black;
-                padding: 2rem 0;
-            }
-
-            .btn{
-                background: $blue-sat;
-                color:$white;
-            
-                &:hover {
-                    background: $light-blue;
-                    color:$blue-sat;
-                }
-            }
-        }
-    }
-}
-
-.featur{
-    .box-container{
-        @include grid(16rem);
-
-        .box{
-            padding:3rem 2rem; 
-            text-align: center; 
-            // border:$border; 
-            background: $light-blue; 
-            cursor: pointer;
-
-            &:hover{
-                background: $black;
-                // padding:6rem 4rem; 
-                h3{
-                    color: $white;
-                }
-            }
-
-            img{
-                height: 10rem;
-                margin-bottom: .7rem;
-            }
-
-            h3{
-                @include titleText(2rem);
-                padding:.5rem 0;
-            }
-        }
-    }
-}
-
-// home course
-
-.home-cours{
-
-    .slide{
-        text-align: center;
-        position: relative;
-        width: 30rem; 
-        background: $course;
-        overflow: hidden;
-
-        &:hover .content {
-            bottom: 0;
-        }
-
-        .image{
-            padding: 2rem;
-
-            img{
-                width: 100%;
-                margin-bottom: 1.5rem;
-            }
-
-            h3{
-                @include titleText(2rem);
-                color: $white;
-
-            }
-        }
-
-        .content {
-            position: absolute;
-            height: 100%;
-            bottom: -100%; right: 0; left: 0;
-            background: $course;
-            padding: 2rem 3rem;
-
-            h3{
-                @include titleText(2rem);
-                color: $white;
-            }
-
-            p{
-                padding: 1rem 0;
-                @include graphText(1.5rem);
-                color:$light-white ;
-            }
-
-            .btn{background: $black;
-                color:$white;
-                border: none;
-            
-                &:hover {
-                    background: $blue-sat;
-                    color:$white;
-                }
-            }
-
-        }
-    }
-}
-
-.about{
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap:3rem;
-
-    .images{
-        flex:1 1 10rem;
-        // border: $border;
-
-        img{
-            display: block;
-            margin: auto;
-            width:auto;
-            height: 40rem;
-        }
-    }
-    .content{
-        padding:3rem 3rem 3rem 3rem;
-        flex:1 1 40rem;
-        top: 0;
-        // border: $border;
-        height: 30rem;
-        .about-title{
-            @include titleText(2.5rem);
-            color: $light-white
-        }
-        p{
-            @include graphText(1.5rem);
-            color: $white;
-            padding:1rem 0;
-        }
-    }
-}
-
-.reviews{
-
-    .slide{
-        text-align: center;
-        // width: 30rem;
-        p{
-            @include graphText(1.5rem);
-            position: relative;
-            background: $light-blue;
-            border:$border;
-            margin-bottom: 3rem;
-            padding:2rem;
-
-            &::before{
-                content: '';
-                position: absolute;
-                bottom:-1.2rem; left:50%;
-                transform: translateX(-50%) rotate(45deg);
-                background: $light-blue;
-                border-bottom: $border;
-                border-right: $border;
-                height: 2rem;
-                width: 2rem;
-            }
-        }
-
-        img{
-            height: 7rem; 
-            width: 7rem; 
-            border-radius: 50%;
-        }
-            
-        h3{    
-        @include titleText(2.2rem); 
-        color: $black;
-        padding:.5rem 0;
-        }
-
-        .stars{
-            font-size: 1.5rem;
-            color: $blue-sat;
-        }
-    }
-}
-
-.contact {
-
-    .icons-container{ 
-        margin-bottom: 3rem; 
-        @include grid(25rem);
-
-        .icons{ 
-            text-align: center; 
-            padding:3rem 2rem; 
-            // border:$border; 
-            background: $course;
-        
-            i{
-                height: 6rem; 
-                width: 6rem; 
-                line-height: 6rem; 
-                font-size: 2rem; 
-                border-radius: 50%; 
-                margin-bottom: .5rem; 
-                color:$white; background: $blue-sat;
-        
-            }
-
-            h3{
-                @include titleText(2rem);
-                color: $light-blue;
-                padding: .5rem 0;
-            }
-
-            p{
-                @include graphText(1.5rem);
-                color: $light-blue;
-            }
-        
-        }
-    }
-
-    .row{
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        gap:0rem;
-
-        .image{
-            flex:1 1 20rem;
-
-            img{
-                display: block;
-                margin: auto;
-                width:auto;
-                height: 50rem;
-            }
-        }
-
-        form{
-            flex:1 1 40rem; 
-            // border:$border; 
-            padding:2rem;
-                       
-            h3{
-            @include titleText(3rem); 
-            color: $light-white;
-            padding-bottom: 1rem;
-            }
-
-            .box{
-
-                width: 100%;
-                padding:1.2rem 1.4rem;
-                border:$border;
-                background: $blue;
-                font-size: 1.6rem; margin:.7rem 0;
-                
-                &:focus{
-                    background: $light-color; 
-                    color:$blue;
-                    
-                    &::placeholder{ 
-                        color:$course;
-                    }
-                }               
-            }
-
-            textarea{
-                height: 15rem;
-                resize: none;
-            }
-
-            .btn{
-                background: $blue-sat;
-                color:$white;
-            
-                &:hover {
-                    background: $light-blue;
-                    color:$course;
-                    border-color:$light-blue ;
-                }
-            }
-       }
-    }
-}
-
-.try{
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap:1rem;
-    padding: 4rem 5rem;
-
-    .code{
-        flex:1 1 40rem;
-        border: $border;
-        height: 30rem;
-    
-    }
-
-    .result{
-        flex:1 1 40rem; 
-        border:$border; 
-        padding:2rem;
-        height: 30rem;
-                   
-        // h3{
-        // @include titleText(3rem); 
-        // color: $light-white;
-        // padding-bottom: 1rem;
-        // }
-    }
-}
-
-.course_body{
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    min-height: 50rem;
-    padding: 10rem;
-    gap: 5rem;
-    
-    a {
-      flex: 1 1 1cm;
-      text-decoration: none;
-    }
-    .docs {
-      background: $nav;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 2rem;
-      min-height: 45rem;
-      padding: 5rem;
+  }
+  .navbar {
+    position: relative;
+
+    // problem in close nav bar it shouldn't be in navbar with home
+    #close-navbar {
+      position: absolute;
+      top: 1.5rem;
+      right: 2rem;
+      font-size: 4rem;
+      cursor: pointer;
+      color: $course;
+      display: none;
 
       &:hover {
-        background: lighten($nav, 10%);
-        cursor: pointer;
-        .icon, p {
-          transform: translateY(-5px);
-        }
+        transform: rotate(90deg);
+      }
+    }
+    a {
+      margin-right: 2rem;
+      @include titleText(2rem);
+      color: $white;
+      text-decoration: none;
+      &:hover {
+        color: $blue-sat;
+        text-decoration: underline;
+      }
+    }
+  }
+  .icons div {
+    cursor: pointer;
+    font-size: 2.5rem;
+    color: $light-white;
+    margin-left: 1.5rem;
+    &:hover {
+      color: $blue-sat;
+    }
+  }
+  #menu-btn {
+    display: none;
+  }
+}
+
+.account-form {
+  position: fixed;
+  top: 0;
+  right: -105%;
+  width: 35rem;
+  background: $nav;
+  display: flex;
+  flex-flow: column;
+  gap: 2rem;
+  justify-content: center;
+  height: 100%;
+  z-index: 1200;
+  padding: 2rem;
+  text-align: center;
+
+  &.active {
+    right: 0;
+    box-shadow: 0 0 0 100vw Orgba(0, 0, 0, 0.8);
+  }
+
+  #close-form {
+    position: absolute;
+    top: 1.5rem;
+    right: 2.5rem;
+    font-size: 4rem;
+    cursor: pointer;
+    color: $white;
+
+    &:hover {
+      color: $blue-sat;
+    }
+  }
+
+  form {
+    // border: $border;
+    background-color: $light-blue;
+    padding: 2rem;
+    display: none;
+    &.active {
+      display: block;
+    }
+
+    h3 {
+      @include titleText(2.5rem);
+      color: $blue;
+      padding-bottom: 0.5rem;
+      text-transform: uppercase;
+    }
+
+    // input {
+    //     background-color: $light-color;
+    // }
+
+    .box {
+      width: 100%;
+      padding: 1.2rem 1.4rem;
+      border: $border;
+      font-size: 1.6rem;
+      margin: 0.7rem 0;
+      background-color: $light-blue;
+      &::placeholder {
+        color: $course;
       }
 
-      .icon {
-        font-size: 120px;
+      &:hover {
+        border-color: $course;
+      }
+    }
+
+    .flex {
+      padding: 1rem 0;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      label {
+        font-size: 1.5rem;
+        color: $course;
+        cursor: pointer;
+      }
+
+      a {
+        font-size: 1.5rem;
+        color: $course;
+        margin-left: auto;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+          color: $blue-sat;
+        }
+      }
+    }
+
+    .btn {
+      width: 100%;
+      background-color: $light-blue;
+      cursor: pointer;
+
+      &:hover {
+        background: $blue-sat;
+        color: $white;
+      }
+    }
+  }
+
+  .buttons .btn {
+    margin: 0.5rem;
+
+    &.active {
+      background: $blue-sat;
+      color: $white;
+    }
+  }
+}
+
+// home section style
+
+.home {
+  padding: 0;
+  .slide {
+    display: flex;
+    align-items: center;
+    height: 60rem;
+    background-size: cover !important;
+    background-position: center !important;
+    .content {
+      width: 60rem;
+      h3 {
+        @include titleText(5.5rem);
         color: $light-white;
       }
 
       p {
-        @include titleText(3rem);
-        color: $light-white;
+        @include graphText(2rem);
+        color: $black;
+        padding: 2rem 0;
+      }
+
+      .btn {
+        background: $blue-sat;
+        color: $white;
+
+        &:hover {
+          background: $light-blue;
+          color: $blue-sat;
+        }
       }
     }
+  }
 }
 
+.featur {
+  .box-container {
+    @include grid(16rem);
 
+    .box {
+      padding: 3rem 2rem;
+      text-align: center;
+      // border:$border;
+      background: $light-blue;
 
+      .icon {
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 10rem;
+        aspect-ratio: 1;
+        margin-bottom: 0.7rem;
+        background-color: #94a0ff;
+        border-radius: 50%;
+        i {
+          font-size: 3rem;
+          color: $course;
+        }
+      }
 
+      h3 {
+        @include titleText(2rem);
+        padding: 0.5rem 0;
+      }
+    }
+  }
+}
 
+// home course
 
+.home-cours {
+  .slide {
+    text-align: center;
+    position: relative;
+    width: 30rem;
+    background: $course;
+    overflow: hidden;
 
+    &:hover .content {
+      bottom: 0;
+    }
 
+    .image {
+      padding: 2rem;
 
+      img {
+        width: 100%;
+        margin-bottom: 1.5rem;
+      }
+
+      h3 {
+        @include titleText(2rem);
+        color: $white;
+      }
+    }
+
+    .content {
+      position: absolute;
+      height: 100%;
+      bottom: -100%;
+      right: 0;
+      left: 0;
+      background: $course;
+      padding: 2rem 3rem;
+
+      h3 {
+        @include titleText(2rem);
+        color: $white;
+      }
+
+      p {
+        padding: 1rem 0;
+        @include graphText(1.5rem);
+        color: $light-white;
+      }
+
+      .btn {
+        background: $black;
+        color: $white;
+        border: none;
+
+        &:hover {
+          background: $blue-sat;
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+.about {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+
+  .images {
+    flex: 1 1 10rem;
+    // border: $border;
+
+    img {
+      display: block;
+      margin: auto;
+      width: auto;
+      height: 40rem;
+    }
+  }
+  .content {
+    padding: 3rem 3rem 3rem 3rem;
+    flex: 1 1 40rem;
+    top: 0;
+    // border: $border;
+    height: 30rem;
+    .about-title {
+      @include titleText(2.5rem);
+      color: $light-white;
+    }
+    p {
+      @include graphText(1.5rem);
+      color: $white;
+      padding: 1rem 0;
+    }
+  }
+}
+
+.reviews {
+  .slide {
+    text-align: center;
+    // width: 30rem;
+    p {
+      @include graphText(1.5rem);
+      position: relative;
+      background: $light-blue;
+      border: $border;
+      margin-bottom: 3rem;
+      padding: 2rem;
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: -1.2rem;
+        left: 50%;
+        transform: translateX(-50%) rotate(45deg);
+        background: $light-blue;
+        border-bottom: $border;
+        border-right: $border;
+        height: 2rem;
+        width: 2rem;
+      }
+    }
+
+    img {
+      height: 7rem;
+      width: 7rem;
+      border-radius: 50%;
+    }
+
+    h3 {
+      @include titleText(2.2rem);
+      color: $black;
+      padding: 0.5rem 0;
+    }
+
+    .stars {
+      font-size: 1.5rem;
+      color: $blue-sat;
+    }
+  }
+}
+
+.contact {
+  .icons-container {
+    margin-bottom: 3rem;
+    @include grid(25rem);
+
+    .icons {
+      text-align: center;
+      padding: 3rem 2rem;
+      // border:$border;
+      background: $course;
+
+      i {
+        height: 6rem;
+        width: 6rem;
+        line-height: 6rem;
+        font-size: 2rem;
+        border-radius: 50%;
+        margin-bottom: 0.5rem;
+        color: $white;
+        background: $blue-sat;
+      }
+
+      h3 {
+        @include titleText(2rem);
+        color: $light-blue;
+        padding: 0.5rem 0;
+      }
+
+      p {
+        @include graphText(1.5rem);
+        color: $light-blue;
+      }
+    }
+  }
+
+  .row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0rem;
+
+    .image {
+      flex: 1 1 20rem;
+
+      img {
+        display: block;
+        margin: auto;
+        width: auto;
+        height: 50rem;
+      }
+    }
+
+    form {
+      flex: 1 1 40rem;
+      // border:$border;
+      padding: 2rem;
+
+      h3 {
+        @include titleText(3rem);
+        color: $light-white;
+        padding-bottom: 1rem;
+      }
+
+      .box {
+        width: 100%;
+        padding: 1.2rem 1.4rem;
+        border: $border;
+        background: $blue;
+        font-size: 1.6rem;
+        margin: 0.7rem 0;
+
+        &:focus {
+          background: $light-color;
+          color: $blue;
+
+          &::placeholder {
+            color: $course;
+          }
+        }
+      }
+
+      textarea {
+        height: 15rem;
+        resize: none;
+      }
+
+      .btn {
+        background: $blue-sat;
+        color: $white;
+
+        &:hover {
+          background: $light-blue;
+          color: $course;
+          border-color: $light-blue;
+        }
+      }
+    }
+  }
+}
+
+.try {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 4rem 5rem;
+
+  .code {
+    flex: 1 1 40rem;
+    border: $border;
+    height: 30rem;
+
+    textarea {
+      resize: none;
+      width: 100%;
+      height: 100%;
+      background: $course;
+      padding: 10px;
+      color: $white;
+      font-family: monospace;
+      font-size: 16px;
+    }
+  }
+
+  .result {
+    flex: 1 1 40rem;
+    border: $border;
+    padding: 2rem;
+    height: 30rem;
+
+    // h3{
+    // @include titleText(3rem);
+    // color: $light-white;
+    // padding-bottom: 1rem;
+    // }
+  }
+}
+
+.course_body {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 50rem;
+  padding: 10rem;
+  gap: 5rem;
+
+  a {
+    flex: 1 1 1cm;
+    text-decoration: none;
+  }
+  .docs {
+    background: $nav;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+    min-height: 45rem;
+    padding: 5rem;
+
+    &:hover {
+      background: lighten($nav, 10%);
+      cursor: pointer;
+      .icon,
+      p {
+        transform: translateY(-5px);
+      }
+    }
+
+    .icon {
+      font-size: 120px;
+      color: $light-white;
+    }
+
+    p {
+      @include titleText(3rem);
+      color: $light-white;
+    }
+  }
+}
 
 .footer {
-    background: $nav;
+  background: $nav;
 
-    .box-container{
-        @include grid(25rem);
+  .box-container {
+    @include grid(25rem);
 
-        .box {
-            h3{
-                @include titleText(2.2rem);
-                color: $white;
-                padding: 1rem 0;
+    .box {
+      h3 {
+        @include titleText(2.2rem);
+        color: $white;
+        padding: 1rem 0;
 
-                i{
-                    color: $blue-sat;
-
-                }
-            }
-
-            .share{
-                margin-top: 1rem;
-
-                a{
-                    height: 4.5rem;
-                    width: 4.5rem;
-                    line-height:4.5rem;
-                    font-size: 1.7rem;
-                    background-color: $blue-sat;
-                    color: $white;
-                    margin-right: .3rem;
-                    text-align: center;
-                    text-decoration: none;
-
-                    &:hover{
-                        background-color: $course;
-                    }
-                }
-            }
-
-            .link{
-                @include graphText(1.5rem);
-                color: $white;
-                padding: 1rem 0 ;
-                display: block;
-
-                &:hover{
-                    color: $blue-sat;
-                    text-decoration: underline;
-                }
-            }
-            p{
-                @include graphText(1.5rem);
-                color: $white;
-                padding: 2rem 0;
-            }
-
-            .email {
-                width: 100%;
-                padding: 1.2rem 1.4rem;
-                font-size: 1.6rem;
-                border: $border;
-                background-color: $light-white;
-                margin-bottom: 1rem;
-            }
-            .btn{
-                background-color: $nav; 
-                &:hover {
-                    background: $blue-sat;
-                    color:$white;
-                }  
-            }
+        i {
+          color: $blue-sat;
         }
+      }
+
+      .share {
+        margin-top: 1rem;
+
+        a {
+          height: 4.5rem;
+          width: 4.5rem;
+          line-height: 4.5rem;
+          font-size: 1.7rem;
+          background-color: $blue-sat;
+          color: $white;
+          margin-right: 0.3rem;
+          text-align: center;
+          text-decoration: none;
+
+          &:hover {
+            background-color: $course;
+          }
+        }
+      }
+
+      .link {
+        @include graphText(1.5rem);
+        color: $white;
+        padding: 1rem 0;
+        display: block;
+
+        &:hover {
+          color: $blue-sat;
+          text-decoration: underline;
+        }
+      }
+      p {
+        @include graphText(1.5rem);
+        color: $white;
+        padding: 2rem 0;
+      }
+
+      .email {
+        width: 100%;
+        padding: 1.2rem 1.4rem;
+        font-size: 1.6rem;
+        border: $border;
+        background-color: $light-white;
+        margin-bottom: 1rem;
+      }
+      .btn {
+        background-color: $nav;
+        &:hover {
+          background: $blue-sat;
+          color: $white;
+        }
+      }
     }
-    .credit{
-        text-align: center;
-        margin-top: 3rem;
-        padding-top: 3rem;
-        @include titleText(2rem);
-        border-top: $border;
-    }
+  }
+  .credit {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 3rem;
+    @include titleText(2rem);
+    border-top: $border;
+  }
 }
-
-
-
-
-
-
-
 
 // media queries
-@media (max-width:1200px) {
-    .header{
-        padding: 2rem 5%;
-    }
+@media (max-width: 1200px) {
+  .header {
+    padding: 2rem 5%;
+  }
 
-    section{
-        padding: 3rem 5%;
-    }
+  section {
+    padding: 3rem 5%;
+  }
 }
 
-@media (max-width:991px) {
-    html{
-        font-size:55%;
-    }
-    .header{
-        padding: 2rem;
-    }
-    section{
-        padding: 3rem 2rem;
-    }
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+  .header {
+    padding: 2rem;
+  }
+  section {
+    padding: 3rem 2rem;
+  }
 }
 
-@media (max-width:768px) {
-    .header{
-        #menu-btn {
-            display: inline-block;
-        } 
-        .navbar{
-            position: fixed;
-            top:0; right:-105%;
-            width: 30rem;
-            background: $light-color;
-            display: flex;
-            height: 100%;
-            flex-flow: column;
-            justify-content: center;
-            z-index: 1200;
-
-            #close-navbar{
-                display: block;
-            }
-
-            &.active{
-                box-shadow: 0 0 0 100vw Orgba(0,0,0,.8); 
-                right: 0;
-            }
-            a{
-                display: block;
-                margin:1rem 0; 
-                text-align: center; 
-                font-size: 3rem; 
-            }
-        }
+@media (max-width: 768px) {
+  .header {
+    #menu-btn {
+      display: inline-block;
     }
+    .navbar {
+      position: fixed;
+      top: 0;
+      right: -105%;
+      width: 30rem;
+      background: $light-color;
+      display: flex;
+      height: 100%;
+      flex-flow: column;
+      justify-content: center;
+      z-index: 1200;
 
-    .home .slide .content h3 {
+      #close-navbar {
+        display: block;
+      }
+
+      &.active {
+        box-shadow: 0 0 0 100vw Orgba(0, 0, 0, 0.8);
+        right: 0;
+      }
+      a {
+        display: block;
+        margin: 1rem 0;
+        text-align: center;
         font-size: 3rem;
+      }
     }
+  }
+
+  .home .slide .content h3 {
+    font-size: 3rem;
+  }
 }
 
-@media (max-width:450px) {
-    html{
-        font-size:50%;
-    }
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
 
-    .heading{
-        font-size: 3rem;
-    }
+  .heading {
+    font-size: 3rem;
+  }
 
-    .about .content .about-title {
-        font-size: 4rem;
-           
+  .about .content .about-title {
+    font-size: 4rem;
+  }
+}
+
+.install {
+  color: $light-white;
+  width: 80%;
+  margin: auto;
+  font-size: 18px;
+  h3 {
+    @include titleText(26px);
+    color: $light-white;
+    padding-bottom: 10px;
+  }
+  code {
+    display: block;
+    background-color: #252a35;
+    font-family: monospace;
+    font-size: 16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    margin-top: 15px;
+
+    &::before {
+      content: "$ ";
     }
+  }
 }

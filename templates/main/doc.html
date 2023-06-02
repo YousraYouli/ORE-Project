@@ -27,66 +27,9 @@
       <a href="{% url 'about'%}" class="link">about</a>
       <a href="{% url 'doc'%}" class="link">documentation</a>
       <a href="{% url 'contact'%}" class="link">contact</a>
-      <a href="{% url 'instal'%}" class="link">download</a>
+      <a href="{% url 'instal'%}" class="link">install</a>
     </nav>
-    <div class="icons">
-        <div id="account-btn" class="fas fa-user"></div>
-        <div id="menu-btn" class="fas fa-bars"></div>
-        
-    </div>
   </header>
-   <!-- begin account form -->
-   <div class="account-form">
-    <div id="close-form" class="fas fa-times"></div>
-    {% if request.user.is_authenticated  %}
-    {{request.user.email}}
-    <div class="buttons">
-      <span class="btn active login-btn">Hello</span>
-      <span class="btn register-btn">Hi</span>
-      <a href="{% url 'logout' %}">logout</a>
-    </div>
-        {% else %}
-        <div class="buttons">
-          <span class="btn active login-btn">login</span>
-          <span class="btn register-btn">register</span>
-        </div>
-    <form class="login-form active" action="{% url 'login' %}" method="POST">
-      <h3>login now</h3>
-      {% csrf_token %}<br>
-      <input  name="username" type="username" placeholder="enter your username" class="box"> 
-
-      <input name="password" type="password" placeholder="enter your password" class="box">
-      {% for message in messages %}
-        <p>{{message}}</p> 
-      {%endfor %}
-      <div class="flex">
-        <input type="checkbox" name="" id="remember-me"> 
-
-        <label for="remember-me">remember me</label>
-        <a href="#">forgot password?</a>
-      </div>
-      <input type="submit" value="login now" class="btn">
-    </form>
-
-    <form class="register-form" action="" method="POST">
-      <h3>register now</h3>
-      {% csrf_token %}<br>
-
-      <!-- {{form.email}} <br>
-      {{form.username}} <br>
-      {{form.password2}} <br>
-      {{form.password1}} -->
-      <input  name="email" type="email" placeholder="enter your email" class="box"> 
-      <input name="username" type="username" placeholder="Enter your username" class="box"> 
-      <input name="password1" type="password" placeholder="enter your password" class="box">
-      <input name="password2" type="password" placeholder="confirm your password" class="box">
-
-      <input type="submit" value="register now" class="btn">
-    </form>
-    {% endif %}
-    
-  </div>
-  <!-- end account form -->
   <!-- header end -->
 
   <!-- courses starts  -->
@@ -156,16 +99,7 @@
       <a href="{% url 'about'%}" class="link">about</a>
       <a href="{% url 'doc'%}" class="link">documentation</a>
       <a href="{% url 'contact'%}" class="link">contact</a>
-      <a href="{% url 'instal'%}" class="link">download</a>
-    </div>
-
-    <div class="box">
-      <h3>useful links</h3>
-      <a href="#" class="link">help center</a>
-      <a href="#" class="link">ask questions</a>
-      <a href="#" class="link">send feedback</a>
-      <a href="#" class="link">private policy</a>
-      <a href="#" class="link">terms of use</a>
+      <a href="{% url 'instal'%}" class="link">install</a>
     </div>
 
     <div class="box">
@@ -179,7 +113,6 @@
 
   </div>
 
-  <div class="credit"> write ur credit here</div>
 </section>
 
 <!-- footer ends  -->
