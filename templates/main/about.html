@@ -27,74 +27,12 @@
       <a href="{% url 'about'%}" class="link">about</a>
       <a href="{% url 'doc'%}" class="link">documentation</a>
       <a href="{% url 'contact'%}" class="link">contact</a>
-      <a href="{% url 'instal'%}" class="link">download</a>
+      <a href="{% url 'instal'%}" class="link">install</a>
     </nav>
-    <div class="icons">
-        <div id="account-btn" class="fas fa-user"></div>
-        <div id="menu-btn" class="fas fa-bars"></div>
-        
-    </div>
   </header>
-   <!-- begin account form -->
-   <div class="account-form">
-    <div id="close-form" class="fas fa-times"></div>
-    {% if request.user.is_authenticated  %}
-    {{request.user.email}}
-    <div class="buttons">
-      <span class="btn active login-btn">Hello</span>
-      <span class="btn register-btn">Hi</span>
-      <a href="{% url 'logout' %}">logout</a>
-    </div>
-        {% else %}
-        <div class="buttons">
-          <span class="btn active login-btn">login</span>
-          <span class="btn register-btn">register</span>
-        </div>
-    <form class="login-form active" action="{% url 'login' %}" method="POST">
-      <h3>login now</h3>
-      {% csrf_token %}<br>
-      <input  name="username" type="username" placeholder="enter your username" class="box"> 
-
-      <input name="password" type="password" placeholder="enter your password" class="box">
-      {% for message in messages %}
-        <p>{{message}}</p> 
-      {%endfor %}
-      <div class="flex">
-        <input type="checkbox" name="" id="remember-me"> 
-
-        <label for="remember-me">remember me</label>
-        <a href="#">forgot password?</a>
-      </div>
-      <input type="submit" value="login now" class="btn">
-    </form>
-
-    <form class="register-form" action="" method="POST">
-      <h3>register now</h3>
-      {% csrf_token %}<br>
-
-      <!-- {{form.email}} <br>
-      {{form.username}} <br>
-      {{form.password2}} <br>
-      {{form.password1}} -->
-      <input  name="email" type="email" placeholder="enter your email" class="box"> 
-      <input name="username" type="username" placeholder="Enter your username" class="box"> 
-      <input name="password1" type="password" placeholder="enter your password" class="box">
-      <input name="password2" type="password" placeholder="confirm your password" class="box">
-
-      <input type="submit" value="register now" class="btn">
-    </form>
-    {% endif %}
-    
-  </div>
-  <!-- end account form -->
   <!-- header end -->
 
   <!-- about us starts -->
-  
-<section class="heading-link">
-  <h3>about us</h3>
-  <p> <a href="{% url 'home' %}">home</a> / about </p>
-</section>
 
 <!-- about section starts -->
 
@@ -105,8 +43,15 @@
   </div>
 
   <div class="content">
-    <h3 class="about-title">small description about us</h3> 
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam hic magnam fugit exercitationem neque, quae laboriosam natus. Ut maxime assumenda facere ea quasi accusamus dolores delectus tempora animi,expedita iste.</p>
+    <h3 class="about-title">about us</h3> 
+    <p>
+  As a team , we are committed to providing an exceptional programming experience. We prioritize user satisfaction, simplicity, and creativity.<br />
+At Ore , we provide you the user , with a user-friendly and math oriented interpreted language that can help you build your programs and projects . And through our site’s interface you’ll have the chance to test small programs and have an insight on the basic operations you can realize with the language , without having to install it first.<br />
+
+As an extra bonus point , you’ll be working with a convenient and simple syntax with little to no restrictions which makes it the perfect choice for you as a begginer.<br />
+
+As a user of Ore, you can expect a helpful and responsive support team to assist you with any questions or issues you may encounter. We strive to provide the best possible experience for our users, and we are always looking for ways to improve. Don't hesitate to reach out to us if you need help or have any suggestions for how we can make Ore even better.
+    </p>
 </section>
 <!-- about section ends -->
 
@@ -120,7 +65,7 @@
       <div class="swiper-wrapper">
 
         <div class="swiper-slide slide">
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim animi atque numquam harum libero nemo, eligendi laboriosam beatae quo iure corrupti, neque rerum possimus non nisi quia! Cumque,tempora sit.</p>
+          <p>As a beginner, I found Ore incredibly user-friendly. The step-by-step installation guide and interactive examples made it easy for me to grasp the concepts. It's the perfect language for anyone starting their coding journey.</p>
           <img src="{% static 'image/istockphoto-1087531642-170667a.jpg'%}" alt="">
           <h3>john deo</h3>
           <div class="stars">
@@ -133,7 +78,7 @@
         </div>
 
         <div class="swiper-slide slide">
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim animi atque numquam harum libero nemo, eligendi laboriosam beatae quo iure corrupti, neque rerum possimus non nisi quia! Cumque,tempora sit.</p>
+          <p>I've been using Ore for my school homework , and I'm amazed by its versatility. It integrates with other tools and frameworks like the C++ libraries, allowing me to build complex applications with a less complicated code , it saved me so much time!</p>
           <img src="{% static 'image/istockphoto-1087531642-170667a.jpg'%}" alt="">
           <h3>john deo</h3>
           <div class="stars">
@@ -146,7 +91,7 @@
         </div>
 
         <div class="swiper-slide slide">
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim animi atque numquam harum libero nemo, eligendi laboriosam beatae quo iure corrupti, neque rerum possimus non nisi quia! Cumque,tempora sit.</p>
+          <p>Ore shows great potential as a programming language. Although it's still in its early stages, I'm impressed by the dedication of the development team. With continuous updates and improvements, I can see Ore becoming a powerful tool for developers in the future.</p>
           <img src="{% static 'image/istockphoto-1087531642-170667a.jpg'%}" alt="">
           <h3>john deo</h3>
           <div class="stars">
@@ -159,33 +104,7 @@
         </div>
 
         <div class="swiper-slide slide">
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim animi atque numquam harum libero nemo, eligendi laboriosam beatae quo iure corrupti, neque rerum possimus non nisi quia! Cumque,tempora sit.</p>
-          <img src="{% static 'image/istockphoto-1087531642-170667a.jpg'%}" alt="">
-          <h3>john deo</h3>
-          <div class="stars">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star-half-alt"></i>
-          </div>
-        </div>
-
-        <div class="swiper-slide slide">
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim animi atque numquam harum libero nemo, eligendi laboriosam beatae quo iure corrupti, neque rerum possimus non nisi quia! Cumque,tempora sit.</p>
-          <img src="{% static 'image/istockphoto-1087531642-170667a.jpg'%}" alt="">
-          <h3>john deo</h3>
-          <div class="stars">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star-half-alt"></i>
-          </div>
-        </div>
-
-        <div class="swiper-slide slide">
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim animi atque numquam harum libero nemo, eligendi laboriosam beatae quo iure corrupti, neque rerum possimus non nisi quia! Cumque,tempora sit.</p>
+          <p>I've been exploring Ore for a few weeks now, and while it's still a fresh language, I'm excited about its unique features. The concept behind Ore is promising, and I believe it has the potential to redefine how we approach programming. Looking forward to seeing it evolve!</p>
           <img src="{% static 'image/istockphoto-1087531642-170667a.jpg'%}" alt="">
           <h3>john deo</h3>
           <div class="stars">
@@ -249,16 +168,7 @@
       <a href="{% url 'about'%}" class="link">about</a>
       <a href="{% url 'doc'%}" class="link">documentation</a>
       <a href="{% url 'contact'%}" class="link">contact</a>
-      <a href="{% url 'instal'%}" class="link">download</a>
-    </div>
-
-    <div class="box">
-      <h3>useful links</h3>
-      <a href="#" class="link">help center</a>
-      <a href="#" class="link">ask questions</a>
-      <a href="#" class="link">send feedback</a>
-      <a href="#" class="link">private policy</a>
-      <a href="#" class="link">terms of use</a>
+      <a href="{% url 'instal'%}" class="link">install</a>
     </div>
 
     <div class="box">
@@ -272,7 +182,6 @@
 
   </div>
 
-  <div class="credit"> write ur credit here</div>
 </section>
 
 <!-- footer ends  -->
