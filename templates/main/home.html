@@ -96,38 +96,23 @@
   <!-- try it out section starts  -->
     <h1 class="heading">Try it out!</h1>
   <div class="try">
-
-
     <div class="code">
-      <textarea>
+      <button id="run">
+        <i class="fa fa-caret-right"></i>
+        <span>Run</span>
+    </button>
+
+      <textarea id="editor">
 -- you can edit code here!
 
 print("hello world!")
 </textarea>
     </div>
 
-    <div id="speci" class="result">
-      {{command_output}}
-    </div>
+    <pre id="result" class="result">
+hello world! 
+    </pre>
   </div>
-
-  <script>
-
-   var target = document.getElementById("speci");
-    
-      function display_code(){
-          $.ajax({
-              url: "execute_code.py", 
-              context: document.body
-              })
-
-            return show_output()
-          }
-          display_code();
-          target.innerHTML =  display_code();
-    </script>
-
-  <button type="submit" onclick='display_code()'>Try it yourself!</button>
 
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
   
@@ -203,6 +188,26 @@ print("hello world!")
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 <!-- js file -->
 <script src="{% static 'js/js.js'%}"></script>
+<script>
+
+const editor = document.getElementById("editor");
+const run = document.getElementById("run");
+const result = document.getElementById("result");
+
+run.addEventListener("click", () => {
+  fetch("/execute", {
+    method: "POST",
+    body: JSON.stringify({ code: editor.value }),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((res) => res.json())
+    .then((res) => (result.innerHTML = res.output));
+});
+
+</script>
+
 
 </body>
 </html>

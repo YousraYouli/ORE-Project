@@ -3,13 +3,16 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, JsonResponse
 from .forms import CreateUserForm
 from django.urls import reverse
 from . import util
 from django.core.mail import send_mail
 from django.conf import settings
 from .forms import ContactForm
+import json
+import os
+from django.views.decorators.csrf import csrf_exempt
 
     
 def home(request):
@@ -147,3 +150,17 @@ def indexx(request):
 
 def successView(request):
     return HttpResponse("Success! Thank you for your message.")
+
+# to login via facebook
+def Logil(request):
+    return render(request, 'main/Logil.html')
+
+@csrf_exempt
+def execute(request):
+    if request.method == "POST":
+        code = json.loads(request.body.decode())['code']
+        with open("/tmp/ore_exec", "w") as f:
+            f.write(code)
+
+        output = os.popen("orepl /tmp/ore_exec").read()
+        return JsonResponse({"output": output})
