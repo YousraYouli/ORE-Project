@@ -13,57 +13,8 @@ from .forms import ContactForm
 import json
 import os
 from django.views.decorators.csrf import csrf_exempt
-# def mai(request):
-#     return render(request,'main/mai.html')
-# def mai(request):
-
-# 	if request.method == 'POST':
-# 		message = request.POST['message']
-
-# 		send_mail('Contact Form',
-# 		 message, 
-# 		 settings.EMAIL_HOST_USER,
-# 		 ['y.meflah@esi-sba.dz'], 
-# 		 fail_silently=False)
-# 	return render(request, 'main/mai.html')
-# def mai(request):
-#     if request.method == 'POST':
-#         subject = request.POST.get('subject')
-#         message = request.POST.get('message')
-#         recipient_list = [request.POST.get('recipient_email')]
-#         send_mail(
-#             subject,
-#             message,
-#             settings.EMAIL_HOST_USER,
-#             recipient_list,
-#             fail_silently=False,
-#         )
-#         return render(request, 'main/home.html')
-#     return render(request, 'main/mai.html')
-
-
-# def mai(request):
-#     if request.method == 'POST':
-#         form = ContactForm(request.POST)
-#         if form.is_valid():
-#             name = form.cleaned_data['name']
-#             email = form.cleaned_data['email']
-#             message = form.cleaned_data['message']
-#             subject = f"New message from {name}"
-#             from_email = 'y.meflah@esi-sba.dz'
-#             to_email = ['y.meflah@esi-sba.dz'] # Put your email address here
-#             contact_message = f"Name: {name}\nEmail: {email}\n\n{message}"
-#             send_mail(subject, contact_message, from_email, to_email, fail_silently=False)
-#             return render(request, 'main/success.html')
-#     else:
-#         form = ContactForm()
-#     return render(request, 'main/mai.html', {'form': form})
-
-
 
     
-
-
 def home(request):
     form = CreateUserForm()
     
@@ -165,6 +116,40 @@ def search_results (request,query,results):
     if results == ' ':
         return render(request,"main/search.html", {'results': [],'q': query})  
     return render(request, "main/search.html", {'results': results.split(','),'q': query})
+
+
+#""" def indexx(request):
+  #  form=ContactForm(request.POST or None)
+  # "" if request.method=='POST':
+    #    form=ContactForm()
+    #if form.is_valid():
+ #       print('the form was valid')
+ #""   else:
+  #      form=ContactForm()
+   # return render(request,"main/indexx.html",{
+    #""   'form=':form
+   # }) """
+
+def indexx(request):
+    if request.method == "GET":
+        form = ContactForm()
+    else:
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data["name"]
+            email = form.cleaned_data["email"]
+            message = form.cleaned_data['message']
+           # phone=form.cleaned_data['phone']
+            send_mail(name, message, email, ["yousra17012004@gmali.com"])
+           # try:
+            #    send_mail(subject, message, from_email, ["admin@example.com"])
+            #except BadHeaderError:
+             #   return HttpResponse("Invalid header found.")
+            #return redirect("success")
+    return render(request, "main/indexx.html", {"form": form})
+
+def successView(request):
+    return HttpResponse("Success! Thank you for your message.")
 
 # to login via facebook
 def Logil(request):

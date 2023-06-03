@@ -23,8 +23,13 @@ EMAIL_HOST_USER = ''
 EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = 587 # 25
 EMAIL_USE_TLS = True
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+#EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 #DEFAULT_FROM_EMAIL = 'will@wsvincent.com'
+EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
+EMAIL_HOST_USER = '5d84835959372f'
+EMAIL_HOST_PASSWORD = '9962f979c4cd00'
+EMAIL_PORT = '2525'
 
 
 

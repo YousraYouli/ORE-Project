@@ -1,4 +1,4 @@
-{% load static %}
+ {% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,21 +35,14 @@
 <section class="contact">
   <h1 class="heading">get in touch</h1>
   <div class="row">
-
-    <div class="image">
+ <div class="image">
       <img src="{% static 'image/5114867-01.png'%}" alt="">
     </div>
 
-    <form action="" method="POST">
-    {% csrf_token %}
-       <input type="text" placeholder="name" class="box">
-      <input type="email" placeholder="email" class="box">
-      <input type="number" placeholder="phone" class="box">
-      <textarea name="" class="box" placeholder="message" id="" cols="30" rows="10"></textarea>
-      <input type="submit" value="send message" class="btn">
-    </form>
-<!--
- <div class="box">
+  <form method="POST"  action="">
+   {% csrf_token %}
+    <h3>send us a message</h3>
+    <div class="box" style="background-color:#ffffff; with= 100%;">
         {{ form.name }}
     </div>
     <div class="box">
@@ -65,7 +58,9 @@
       <input type="submit" value="send message" class="btn">    
     </div>
     </form>
-    -->
+    
+
+
 </div>
 </section>
 
@@ -147,3 +142,10 @@
 
 </body>
 </html>
+
+ <!-- <h2>Contact Us</h2>
+  <form method="POST"  action="">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit" class="btn">Send</button>
+  </form>-->
