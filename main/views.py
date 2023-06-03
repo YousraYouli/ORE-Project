@@ -162,5 +162,5 @@ def execute(request):
         with open("/tmp/ore_exec", "w") as f:
             f.write(code)
 
-        output = os.popen("orepl /tmp/ore_exec").read()
+        output = os.popen("orepl -a /tmp/ore_exec").read()
         return JsonResponse({"output": output})
