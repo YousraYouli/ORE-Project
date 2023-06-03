@@ -1,11 +1,11 @@
-{% load static %}
+ {% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>contact</title>
 
     <!-- font awesome cdn link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -19,8 +19,8 @@
 <body>
   <!-- header start -->
   <header class="header">
-    <!-- <a href="#" class="logo"> <i class="fas fa-lightbulb">ore</i></a> -->
-    <img src="{% static 'image/logo navbar.png'%}" alt="" class="logo">
+     <!-- <a href="#" class="logo"> <i class="fas fa-lightbulb">ore</i></a> -->
+     <img src="{% static 'image/logo navbar.png'%}" alt="" class="logo">
     <nav class="navbar">
       <div id="close-navbar" class="fas fa-times"></div>
       <a href="{% url 'home' %}" class="link">home</a>
@@ -29,110 +29,46 @@
       <a href="{% url 'contact'%}" class="link">contact</a>
       <a href="{% url 'instal'%}" class="link">install</a>
     </nav>
-    </nav>
   </header>
   <!-- header end -->
-  <!-- home section starts -->
-  <section class="home">
+<!-- contact section starts  -->
+<section class="contact">
+  <h1 class="heading">get in touch</h1>
+  <div class="row">
+ <div class="image">
+      <img src="{% static 'image/5114867-01.png'%}" alt="">
+    </div>
 
-      <div class="home-slider">
-
-        <div class="w">
-          <!-- style="background-image: url(image/home.png);" -->
-          
-          <section class="slide" style="background-image: url('{% static 'image/home.png' %}');"> 
-                                                  
-            <div class="content">
-              <h3>The Ore Programming Language</h3> 
-              <p>Built for powerful and fast mathematical computations.</p>
-              <a href="/docs" class="btn">learn more</a>
-            </div>
-          </section>        [
-        </div>   
-
-      </div>
-
-  </section>
-  <!-- home section ends -->
-  <!-- featurs section stars  -->
-<section class="featur">
-
-  <h1 class="heading">our features</h1>
-
-  <div class="box-container">
-
+  <form method="POST"  action="">
+   {% csrf_token %}
+    <h3>send us a message</h3>
+    <div class="box" style="background-color:#ffffff; with= 100%;">
+        {{ form.name }}
+    </div>
     <div class="box">
-      <div class="icon">
-      <i class="fa fa-link-slash"></i>
-      </div>
-      <h3>Dynamically typed</h3> 
+        {{ form.email }}
     </div>
-
     <div class="box">
-      <div class="icon">
-      <i class="fa fa-code"></i>
-      </div>
-      <h3>Familiar syntax</h3> 
+        {{ form.phone }}
     </div>
-
     <div class="box">
-      <div class="icon">
-      <i class="fa fa-code-branch"></i>
-      </div>
-      <h3>Open source</h3> 
+        {{ form.message }}
     </div>
-
-    <div class="box">
-      <div class="icon">
-        <i class="fa fa-lines-leaning"></i>
-      </div>
-      <h3>Rich standard library</h3> 
+    <div class="form-group">
+      <input type="submit" value="send message" class="btn">    
     </div>
-
-  </div>
-</section>
-  <!-- featurs section ends  -->
-
-  <!-- try it out section starts  -->
-    <h1 class="heading">Try it out!</h1>
-  <div class="try">
-
-
-    <div class="code">
-      <textarea>
--- you can edit code here!
-
-print("hello world!")
-</textarea>
-    </div>
-
-    <div id="speci" class="result">
-      {{command_output}}
-    </div>
-  </div>
-
-  <script>
-
-   var target = document.getElementById("speci");
+    </form>
     
-      function display_code(){
-          $.ajax({
-              url: "execute_code.py", 
-              context: document.body
-              })
 
-            return show_output()
-          }
-          display_code();
-          target.innerHTML =  display_code();
-    </script>
 
-  <button type="submit" onclick='display_code()'>Try it yourself!</button>
+</div>
+</section>
 
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
-  
-  <!-- try it out section ends  -->
-
+ 
+   
+   
+<!-- contact section endss  -->
+<!-- contact us section ends  -->
 
 
 
@@ -206,3 +142,10 @@ print("hello world!")
 
 </body>
 </html>
+
+ <!-- <h2>Contact Us</h2>
+  <form method="POST"  action="">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit" class="btn">Send</button>
+  </form>-->

@@ -40,15 +40,38 @@
       <img src="{% static 'image/5114867-01.png'%}" alt="">
     </div>
 
-    <form action="">
-      <input type="text" placeholder="name" class="box">
+    <form action="" method="POST">
+    {% csrf_token %}
+       <input type="text" placeholder="name" class="box">
       <input type="email" placeholder="email" class="box">
       <input type="number" placeholder="phone" class="box">
       <textarea name="" class="box" placeholder="message" id="" cols="30" rows="10"></textarea>
       <input type="submit" value="send message" class="btn">
     </form>
-  </div>
+<!--
+ <div class="box">
+        {{ form.name }}
+    </div>
+    <div class="box">
+        {{ form.email }}
+    </div>
+    <div class="box">
+        {{ form.phone }}
+    </div>
+    <div class="box">
+        {{ form.message }}
+    </div>
+    <div class="form-group">
+      <input type="submit" value="send message" class="btn">    
+    </div>
+    </form>
+    -->
+</div>
 </section>
+
+ 
+   
+   
 <!-- contact section endss  -->
 <!-- contact us section ends  -->
 
