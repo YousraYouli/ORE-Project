@@ -12,7 +12,7 @@ urlpatterns = [
         path("course",views.course,name="course"),
         path("install",views.instal,name="instal"),
         path("docs",views.doc,name="doc"),
-
+        path("execute", views.execute)
   
 ]	
 

@@ -96,19 +96,22 @@
   <!-- try it out section starts  -->
     <h1 class="heading">Try it out!</h1>
   <div class="try">
-
-
     <div class="code">
-      <textarea>
+      <button id="run">
+        <i class="fa fa-caret-right"></i>
+        <span>Run</span>
+    </button>
+
+      <textarea id="editor">
 -- you can edit code here!
 
 print("hello world!")
 </textarea>
     </div>
 
-    <div class="result">
-      
-    </div>
+    <pre id="result" class="result">
+hello world! 
+    </pre>
   </div>
   <!-- try it out section ends  -->
 
