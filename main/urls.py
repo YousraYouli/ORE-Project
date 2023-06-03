@@ -13,7 +13,8 @@ urlpatterns = [
         path("install",views.instal,name="instal"),
         path("docs",views.doc,name="doc"),
         path("indexx", views.indexx, name="indexx"),
-        path("execute", views.execute)
+        path("execute", views.execute),
+        path("ore-docs", views.ore_docs, name="ore-docs")
   
 ]	
 

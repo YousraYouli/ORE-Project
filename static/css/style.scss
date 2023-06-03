@@ -895,3 +895,37 @@ section {
     }
   }
 }
+
+.ore-docs {
+  color: $light-white;
+  width: 80%;
+  margin: auto;
+  font-size: 18px;
+  p {
+    line-height: 3rem;
+  }
+  h2 {
+    margin: 10px 0;
+  }
+  h3 {
+    @include titleText(26px);
+    color: $light-white;
+    padding-bottom: 10px;
+  }
+  pre {
+    display: block;
+    background-color: #252a35;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 16px;
+    code {
+      padding: 0;
+    }
+  }
+
+  code {
+    font-family: monospace;
+    background-color: #252a35;
+    padding: 3px;
+  }
+}

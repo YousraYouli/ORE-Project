@@ -1,0 +1,494 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Installation</title>
+
+    <!-- font awesome cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- swiper css link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <!-- css file -->
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+</head>
+<body>
+  <!-- header start -->
+  <header class="header">
+     <!-- <a href="#" class="logo"> <i class="fas fa-lightbulb">ore</i></a> -->
+     <img src="{% static 'image/logo navbar.png'%}" alt="" class="logo">
+    <nav class="navbar">
+      <div id="close-navbar" class="fas fa-times"></div>
+      <div id="close-navbar" class="fas fa-times"></div>
+      <a href="{% url 'home' %}" class="link">home</a>
+      <a href="{% url 'about'%}" class="link">about</a>
+      <a href="{% url 'doc'%}" class="link">documentation</a>
+      <a href="{% url 'contact'%}" class="link">contact</a>
+      <a href="{% url 'instal'%}" class="link">install</a>
+    </nav>
+  </header>
+    
+  </div>
+  <!-- end account form -->
+  <!-- header end -->
+
+  <section class="ore-docs">
+<h1 class="heading">Ore Programming Language Guide (v0.1.0)</h1>
+
+<p>Your syntax files need to be encoded in UTF-8.</p>
+
+<h2 id="comments">Comments</h2>
+
+<p>Single-line comment start with <code>--</code>. Multiline comments are not yet supported so they must be divided into mutliple Single-line comments</p>
+
+<pre><code class="language-lua">-- this is a comment 
+
+
+-- this is 
+-- a 
+-- multiline comment
+</code></pre>
+
+<h2 id="variables">Variables</h2>
+
+<p>there is not a keyword for variable declaration , Variables are declared by the name and the value
+If you try to access a variable that wasn&#8217;t initialized before, a runtime exception is thrown.</p>
+
+<pre><code class="language-python">variable_1 = "test"
+variable_2 = true
+</code></pre>
+
+<h2 id="literals">Literals</h2>
+
+<p>Ore  has a total of 9 primitive types.
+      <pre><code>25             : Number
+25.5           : Number
+"Charly"       : String
+[1, 2, 3]      : ArrayObject
+nil            : Nil
+false          : Boolean
+true           : Boolean
+function() {}  : FunctionObject
+{prop : true } : Object</code></pre></p>
+
+<blockquote>
+<p>You can get the type of a value by calling the <code>type()</code> function.
+  It returns the name of the type as a string.</p>
+</blockquote>
+
+<pre><code class="language-lua">type(25) -- =&#62; "Numeric"
+type("Hello World!") -- =&#62; "String"
+type(nil) -- =&#62; "Nil"
+type(func() {}) -- =&#62; "Function"
+</code></pre>
+
+<h3 id="nil">nil</h3>
+
+<p>The <code>Nil</code> type can be compared to <code>undefined</code> in javascript or <code>nil</code> in some other languages.</p>
+
+<pre><code class="language-lua">nil
+</code></pre>
+
+<h3 id="boolean">Boolean</h3>
+
+<p>A <code>Boolean</code> only has two different values: <code>true</code> and <code>false</code>.and they are case sensitive, for example &#8220;True&#8221; is not supported.
+      <pre><code>true
+false</code></pre></p>
+
+<h3 id="numeric">Numeric</h3>
+
+<p>All Numeric types inside Ore are C++&#8217;s native <code>double</code> type.</p>
+
+<p>Numeric literals, just like any other expression in the language, can be prefixed with <code>-</code> to negate them.They can be prefixed by &#8220;0b&#8221;,"0x&#8221;,"0o&#8221; to specify the radix.
+      <pre><code>binary = 0b11 -- 2
+octal  = 0o10 -- 8 
+hex    = 0x10 -- 16
+dec    = 10</code></pre></p>
+
+<p>Floats are created using the <code>.</code> character.</p>
+
+<pre><code class="language-lua">123.45689
+</code></pre>
+
+<p>A Numeric will through an exception if you pass the lower or upper limit of <code>double</code>.
+The following REPL session elaborates this:</p>
+
+<p><img src="images/overflow.png" alt="Numeric literal overflowing" /></p>
+
+<p>Operations such as <code>1 &#47; 0</code> will result in an exception.</p>
+
+<h3 id="string">String</h3>
+
+<p>A String represents an immutable sequence of UTF-8 characters.</p>
+
+<p>It uses C++&#8217;s native <code>std::string</code> type underneath.</p>
+
+<p>You can create it using either <code>"</code> or <code>&#39;</code>characters.</p>
+
+<pre><code class="language-javascript">"hello world"
+&#39;hello world!&#39;
+</code></pre>
+
+<p>special characters inside the string are not supported.</p>
+
+<pre><code class="language-lua">"\"" -- =&#62; \"
+</code></pre>
+
+<p>A string can&#8217;t span multiple lines.</p>
+
+<h3 id="array">Array</h3>
+
+<p>An Array is a resizeable list of items of any type. It is typically created with an array literal:</p>
+
+<pre><code class="language-javascript">[1, 2, 3]
+[1, "hello world", ["whats up"]]
+</code></pre>
+
+<p>You can add new items to an array using the append method:</p>
+
+<pre><code class="language-lua">nums = []
+nums:append(0)
+nums:append(1)
+nums:append(2)
+
+nums -- =&#62; [0, 1, 2]
+</code></pre>
+
+<h3 id="objects">Objects</h3>
+
+<p>Ore objects are declared similarly to JavaScript objects:
+
+<pre><code>Test = {
+  a : 1,
+  b : function () {
+          return(5)
+      }
+  }
+
+Test.a -- =&#62; 1
+Test.b() -- =&#62; 5</code></pre></p>
+
+<p>You can access properties of objects via <code>[]</code>:</p>
+
+<pre><code class="language-lua">Box = {
+  name : "mybox"
+}
+
+Box["name"] -- =&#62; "mybox"
+</code></pre>
+
+<h3 id="functions">Functions</h3>
+
+<p>You can define a new function like this:</p>
+
+<pre><code class="language-javascript">functions foo() {
+  return("hello world")
+}
+</code></pre>
+
+<p>or like this </p>
+
+<pre><code class="language-javascript">test = function () {
+        print("Test")
+    }
+</code></pre>
+
+<p>You can also do explicit returns</p>
+
+<pre><code class="language-lua">func foo() {
+  if true {
+    return(true)
+  }
+
+  return(false)
+}
+
+foo() -- =&#62; true
+</code></pre>
+
+<p>If you need the function literal, you can use anonymous function literals:</p>
+
+<pre><code class="language-lua">function foo(callback) {
+  callback(42)
+}
+
+foo(
+    function (args) {
+            print(args)
+        } 
+)
+</code></pre>
+
+<p>anonymous functions can be called directly.
+      <pre><code>function () {print(5)}()</code></pre></p>
+
+<h2 id="assignments">Assignments</h2>
+
+<p>Assignment is done with the <code>=</code> character or by composing it with another binary expression character. </p>
+
+<pre><code class="language-lua">var = 1 -- 1 
+var += 1  -- 2 
+var -= 5 -- -3 
+var *= -1 -- 3 
+</code></pre>
+
+<p>all the characters for Assignment are : <code>=</code>,<code>+=</code>,<code>-=</code>,<code>*=</code>,<code>&#47;=</code>,<code>&#60;&#60;=</code>,<code>&#62;&#62;=</code>,<code>..=</code></p>
+
+<h2 id="control-expressions">Control expressions</h2>
+
+<p>All control expressions inside Ore are statements.</p>
+
+<p>This means that you can&#8217;t place a control expression inside a method call.</p>
+
+<h3 id="if-statement">If statement</h3>
+
+<pre><code class="language-Rust">cond = true
+if cond {
+        print("valid!")
+} else {
+       print("invalid")
+}
+</code></pre>
+
+<h3 id="while-statement">While statement</h3>
+
+<pre><code class="language-Rust">counter = 0
+while counter &#60; 5 {
+    print(counter)
+    counter += 1
+}
+</code></pre>
+
+<h3 id="for-statement">For statement</h3>
+
+<pre><code class="language-C">for(i=5;i&#60;25;i+=1){
+        print(i)
+    }
+</code></pre>
+
+<p>in the for,if and while statement if one statement is called, the curly braces can be omitted.</p>
+
+<h3 id="do-while-statement">Do-While statement</h3>
+
+<pre><code class="language-C">i = 0 
+do {
+        print(i)
+        i += 1
+    } while i &#60; 25
+</code></pre>
+
+<p>the braces in the do while loop are obligatory.</p>
+
+<h3 id="truthy-and-falsey-values">Truthy and falsey values</h3>
+
+<p>A <em>truthy</em> value is a value that is considered true for an <code>if</code> and <code>while</code> guard.
+A <em>falsey</em> value is a value that is considered false in those places.</p>
+
+<p>The only falsey values are <code>false</code> ,<code>nill</code> and <code>0</code>. Any other value is <em>truthy</em>.</p>
+
+<h2 id="types-and-methods">Types and methods</h2>
+
+<p>The next sections will assume you know what object oriented programming is,
+as well as the concepts of classes and methods.</p>
+
+<h3 id="everything-is-an-object">Everything is an object</h3>
+
+<p>Everything in Ore is an object. Not every type can have an internal state however.
+Only <code>Object</code>and <code>Array</code> can have an internal state.</p>
+
+<p>When you write <code>5</code>, the interpreter actually treats it as a primitive.
+There are no funny castings or object instantiations (inside Ore). When you write <code>5.times</code>,
+the interpreter searches for a primitive class called <code>NumberObject</code> and checks if it contains a method called <code>times</code>.</p>
+
+<p>This allows the interpreter to reuse the same object for all primitives of the same type.</p>
+
+<p>This principle applies to all language primitives.
+The primitive class <code>Array</code> for example, specifies a method called <code>append</code> which inserts an element into the array.</p>
+
+<h3 id="operators">Operators</h3>
+
+<h4 id="unary-operators">Unary operators</h4>
+
+<pre><code class="language-lua">#   -- length operator
+-   -- negative
+not   -- not
+</code></pre>
+
+<h4 id="binary-operators">Binary operators</h4>
+
+<pre><code class="language-lua">+   -- addition
+-   -- subtraction
+*   -- multiplication
+/   -- division
+%   -- modulo
+and   -- bitwise and
+or -- bitwise or
+xor   -- bitwise xor
+**  -- exponentiation
+&#60;&#60;  -- shift left, append
+&#62;&#62;  -- shift right
+==  -- equals
+!=   -- not equals
+&#60;   -- less
+&#60;=  -- less or equal
+&#62;   -- greater
+&#62;= -- greater or equals</code></pre>
+
+      <h4>Indexing</h4>
+
+
+<pre><code>[] -- array index and object property access</code></pre>
+
+<h2 id="exceptions">Exceptions</h2>
+
+<p>You can throw exceptions from anywhere in the program. Everything is throwable.</p>
+
+<pre><code class="language-lua">function foo(arg) {
+if arg &#60; 10 {
+  throw("ValueException","arg is smaller than 10")
+}
+}
+
+foo(5)
+</code></pre>
+
+<p>This will show up in the console as:</p>
+
+<pre><code>Backtrace (most recent calls first):
+  foo
+  global
+------------------------------
+ValueException: arg is smaller than 10
+nil</code></pre>
+
+<p>and exceptions can be handled as follows : 
+      <pre><code>try{
+ -- code
+} catch(e) {
+ -- code
+ -- the exception e has two attributes  : e.type and e.message
+} finally {
+ -- code
+}</code></pre></p>
+
+<h2 id="requiring-files">Requiring files</h2>
+
+<p>You can include other files using the <code>import</code> method. It accepts a single string argument that serves as the filename.</p>
+
+<p>When including a file, the contents of the <code>export</code> variable is then returned by the <code>require</code> call.</p>
+
+<p>Example:
+      <pre><code>module = import("module.so")
+cos = module.method 
+cos(5)</code></pre></p>
+
+<h2 id="command-line-arguments-and-flags">Command line arguments and flags</h2>
+
+<p>The <code>orepl</code> command has the ability to receive flags.
+A list of these can be obtained by running <code>orepl -h</code> in the command line.</p>
+
+<p>You can pass flags via the following format</p>
+
+<pre><code class="language-bash">orepl input.ore -f flag
+</code></pre>
+
+<p>Arguments which are not flags are passed to the program instead of the interpreter.</p>
+
+<pre><code class="language-bash">orepl input.ore arg1 arg2 arg3 
+</code></pre>
+
+<p>You can access command line arguments and flags via the <code>args</code> array.</p>
+
+<h2 id="built-in-repl">Built-in REPL</h2>
+
+<p>Ore has a built-in REPL (Read Eval Print Loop) where you can quickly test out new ideas.</p>
+
+<p>You can invoke it by typing <code>orepl</code></p>
+
+<p>Here you can write Ore statements. Run them by pressing enter.</p>
+
+<p>The REPL provides a few <em>magic</em> variables which are specific to your current REPL session.</p>
+
+<h2 id="io">IO</h2>
+
+<p>Things related to IO and the file system are  directly included in the prelude.
+      <pre><code>print("hello world")
+var = input()</code></pre></p>
+
+<h2 id="built-in-functions-">Built-in functions :</h2>
+
+<pre><code class="language-lua">-- manually trigger the cargbage collector
+gc()
+-- assert
+assert() 
+-- throwing an exception 
+throw("Type","Message") 
+-- conjonction
+all() 
+-- disjonction
+any() 
+-- get the value&#39;s type
+type()
+-- Array methods
+arr:append(value) -- append a value
+arr:insert(position,value) -- insert the value in the given position
+arr:pop(array) -- pops the last element 
+arr:remove(position) -- remove the element in the given position
+-- 
+</code></pre>
+  </section>
+<!-- footer starts -->
+
+<section class="footer">
+  <div class="box-container">
+
+    <div class="box">
+      <h3> <i class="fas fa-lightbulb"></i> ore </h3> 
+      <p>links of social media, links of social media of our language</p>
+      <div class="share">
+        <a href="#" class="fab fa-facebook-f"></a>
+        <a href="#" class="fab fa-twitter"></a>
+        <a href="#" class="fab fa-github"></a>
+        <a href="#" class="fab fa-linkedin"></a>
+      </div>
+    </div>
+
+    <div class="box">
+      <h3>quick links</h3>
+      <a href="{% url 'home' %}" class="link">home</a>
+      <a href="{% url 'about'%}" class="link">about</a>
+      <a href="{% url 'doc'%}" class="link">documentation</a>
+      <a href="{% url 'contact'%}" class="link">contact</a>
+      <a href="{% url 'instal'%}" class="link">install</a>
+    </div>
+
+    <div class="box">
+      <h3>newsletter</h3>
+      <p>subscribe for latest updates</p>
+      <form action="">
+        <input type="email" name="" placeholder="enter your email" id="" class="email"> 
+        <input type="submit" value="subscribe" class="btn">
+      </form>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- footer ends  -->
+
+
+
+
+
+
+
+<!-- swiper js link -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<!-- js file -->
+<script src="{% static 'js/js.js'%}"></script>
+
+</body>
+</html>

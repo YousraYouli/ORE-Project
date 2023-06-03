@@ -164,3 +164,6 @@ def execute(request):
 
         output = os.popen("orepl -a /tmp/ore_exec").read()
         return JsonResponse({"output": output})
+
+def ore_docs(request):
+    return render(request, "main/ore-docs.html")
