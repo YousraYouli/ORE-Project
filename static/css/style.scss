@@ -625,6 +625,22 @@ section {
     flex: 1 1 40rem;
     border: $border;
     height: 30rem;
+    position: relative;
+
+    #run {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      padding: 10px;
+      background-color: $blue-sat;
+      color: $white;
+      cursor: pointer;
+      font-size: 16px;
+
+      &:hover {
+        background-color: darken($blue-sat, 10%);
+      }
+    }
 
     textarea {
       resize: none;
@@ -643,6 +659,9 @@ section {
     border: $border;
     padding: 2rem;
     height: 30rem;
+    color: $white;
+    font-size: 20px;
+    font-family: monospace;
 
     // h3{
     // @include titleText(3rem);

@@ -561,6 +561,20 @@ section {
   flex: 1 1 40rem;
   border: 2px solid #0ea5e9;
   height: 30rem;
+  position: relative;
+}
+.try .code #run {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  padding: 10px;
+  background-color: #0ea5e9;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+}
+.try .code #run:hover {
+  background-color: #0b83b9;
 }
 .try .code textarea {
   resize: none;
@@ -577,6 +591,9 @@ section {
   border: 2px solid #0ea5e9;
   padding: 2rem;
   height: 30rem;
+  color: #fff;
+  font-size: 20px;
+  font-family: monospace;
 }
 
 .course_body {
