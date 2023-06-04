@@ -21,13 +21,16 @@
      <img src="{% static 'image/logo navbar.png'%}" alt="" class="logo">
     <nav class="navbar">
       <div id="close-navbar" class="fas fa-times"></div>
-      <div id="close-navbar" class="fas fa-times"></div>
       <a href="{% url 'home' %}" class="link">home</a>
       <a href="{% url 'about'%}" class="link">about</a>
       <a href="{% url 'doc'%}" class="link">documentation</a>
       <a href="{% url 'contact'%}" class="link">contact</a>
       <a href="{% url 'instal'%}" class="link">install</a>
     </nav>
+    <div class="icons">
+        <div id="menu-btn" class="fas fa-bars"></div>
+        
+    </div>
   </header>
     
   </div>
