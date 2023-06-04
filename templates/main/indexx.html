@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>contact</title>
+    <link rel="icon" href="{% static 'image/logo navbar.png'%}">
 
     <!-- font awesome cdn link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -24,13 +25,51 @@
     <nav class="navbar">
       <div id="close-navbar" class="fas fa-times"></div>
       <a href="{% url 'home' %}" class="link">home</a>
-      <a href="{% url 'about'%}" class="link">about</a>
       <a href="{% url 'doc'%}" class="link">documentation</a>
+      <a href="{% url 'about'%}" class="link">about</a>
       <a href="{% url 'indexx'%}" class="link">contact</a>
       <a href="{% url 'instal'%}" class="link">install</a>
     </nav>
   </header>
   <!-- header end -->
+  <!-- contact us section starts  -->
+<section id="contact" class="heading-link">
+  <h3 >contact us</h3>
+  <p> <a href="{% url 'home' %}">home</a> / contact </p>
+</section>
+<!-- contact section starts  -->
+<section class="contact">
+  <h1 class="heading">get it touch</h1>
+  <div class="icons-container">
+
+    <div class="icons">
+      <i class="fa fa-clock"></i>
+      <h3>opening hours :</h3>
+      <p>09:00am to 10:00pm</p>
+    </div>
+
+    <div class="icons">
+      <i class="fa fa-phone"></i>
+      <h3>phone :</h3>
+      <p>+123-456-7890</p>
+      <p>+111-456-7890</p>
+    </div>
+
+    <div class="icons">
+      <i class="fa fa-envelope"></i>
+      <h3>emails :</h3>
+      <p>ore@gmail.com</p>
+      <p>personal@gmail.com</p>
+    </div>
+
+    <div class="icons">
+      <i class="fa fa-map"></i>
+      <h3>address :</h3>
+      <p>algeria </p>
+    </div>
+
+  </div>
+
 <!-- contact section starts  -->
 <section class="contact">
   <h1 class="heading">get in touch</h1>
