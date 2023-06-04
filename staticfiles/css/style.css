@@ -10,9 +10,7 @@
 }
 
 img {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 
 html {
@@ -56,7 +54,7 @@ section {
   text-decoration: none;
 }
 .heading-link P a {
-  color: #0EA5E9;
+  color: #0ea5e9;
   text-decoration: none;
 }
 .heading-link P a:hover {
@@ -78,15 +76,15 @@ section {
   margin-top: 1rem;
   padding: 1rem 3rem;
   font-size: 1.8rem;
-  border: 2px solid #0EA5E9;
+  border: 2px solid #0ea5e9;
   background: #b2c8df;
-  color: #0EA5E9;
+  color: #0ea5e9;
   cursor: pointer;
   text-transform: capitalize;
   text-decoration: none;
 }
 .btn:hover {
-  background: #0EA5E9;
+  background: #0ea5e9;
   color: #fff;
 }
 
@@ -109,7 +107,7 @@ section {
   margin-right: auto;
 }
 .header img i {
-  color: #0EA5E9;
+  color: #0ea5e9;
 }
 .header .navbar {
   position: relative;
@@ -136,7 +134,7 @@ section {
   text-decoration: none;
 }
 .header .navbar a:hover {
-  color: #0EA5E9;
+  color: #0ea5e9;
   text-decoration: underline;
 }
 .header .icons div {
@@ -146,7 +144,7 @@ section {
   margin-left: 1.5rem;
 }
 .header .icons div:hover {
-  color: #0EA5E9;
+  color: #0ea5e9;
 }
 .header #menu-btn {
   display: none;
@@ -180,7 +178,7 @@ section {
   color: #fff;
 }
 .account-form #close-form:hover {
-  color: #0EA5E9;
+  color: #0ea5e9;
 }
 .account-form form {
   background-color: #b2c8df;
@@ -202,13 +200,10 @@ section {
 .account-form form .box {
   width: 100%;
   padding: 1.2rem 1.4rem;
-  border: 2px solid #0EA5E9;
+  border: 2px solid #0ea5e9;
   font-size: 1.6rem;
   margin: 0.7rem 0;
   background-color: #b2c8df;
-}
-.account-form form .box::-moz-placeholder {
-  color: #1f2937;
 }
 .account-form form .box::placeholder {
   color: #1f2937;
@@ -235,7 +230,7 @@ section {
 }
 .account-form form .flex a:hover {
   text-decoration: underline;
-  color: #0EA5E9;
+  color: #0ea5e9;
 }
 .account-form form .btn {
   width: 100%;
@@ -243,14 +238,14 @@ section {
   cursor: pointer;
 }
 .account-form form .btn:hover {
-  background: #0EA5E9;
+  background: #0ea5e9;
   color: #fff;
 }
 .account-form .buttons .btn {
   margin: 0.5rem;
 }
 .account-form .buttons .btn.active {
-  background: #0EA5E9;
+  background: #0ea5e9;
   color: #fff;
 }
 
@@ -283,12 +278,12 @@ section {
   padding: 2rem 0;
 }
 .home .slide .content .btn {
-  background: #0EA5E9;
+  background: #0ea5e9;
   color: #fff;
 }
 .home .slide .content .btn:hover {
   background: #b2c8df;
-  color: #0EA5E9;
+  color: #0ea5e9;
 }
 
 .featur .box-container {
@@ -300,17 +295,21 @@ section {
   padding: 3rem 2rem;
   text-align: center;
   background: #b2c8df;
-  cursor: pointer;
 }
-.featur .box-container .box:hover {
-  background: #6b7280;
-}
-.featur .box-container .box:hover h3 {
-  color: #fff;
-}
-.featur .box-container .box img {
+.featur .box-container .box .icon {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 10rem;
+  aspect-ratio: 1;
   margin-bottom: 0.7rem;
+  background-color: #94a0ff;
+  border-radius: 50%;
+}
+.featur .box-container .box .icon i {
+  font-size: 3rem;
+  color: #1f2937;
 }
 .featur .box-container .box h3 {
   font-size: 2rem;
@@ -374,7 +373,7 @@ section {
   border: none;
 }
 .home-cours .slide .content .btn:hover {
-  background: #0EA5E9;
+  background: #0ea5e9;
   color: #fff;
 }
 
@@ -425,7 +424,7 @@ section {
   text-decoration: none;
   position: relative;
   background: #b2c8df;
-  border: 2px solid #0EA5E9;
+  border: 2px solid #0ea5e9;
   margin-bottom: 3rem;
   padding: 2rem;
 }
@@ -436,8 +435,8 @@ section {
   left: 50%;
   transform: translateX(-50%) rotate(45deg);
   background: #b2c8df;
-  border-bottom: 2px solid #0EA5E9;
-  border-right: 2px solid #0EA5E9;
+  border-bottom: 2px solid #0ea5e9;
+  border-right: 2px solid #0ea5e9;
   height: 2rem;
   width: 2rem;
 }
@@ -456,7 +455,7 @@ section {
 }
 .reviews .slide .stars {
   font-size: 1.5rem;
-  color: #0EA5E9;
+  color: #0ea5e9;
 }
 
 .contact .icons-container {
@@ -478,7 +477,7 @@ section {
   border-radius: 50%;
   margin-bottom: 0.5rem;
   color: #fff;
-  background: #0EA5E9;
+  background: #0ea5e9;
 }
 .contact .icons-container .icons h3 {
   font-size: 2rem;
@@ -525,17 +524,14 @@ section {
 .contact .row form .box {
   width: 100%;
   padding: 1.2rem 1.4rem;
-  border: 2px solid #0EA5E9;
-  background: #ffffff;
+  border: 2px solid #0ea5e9;
+  background: #fff;
   font-size: 1.6rem;
   margin: 0.7rem 0;
 }
 .contact .row form .box:focus {
   background: #d1d5db;
   color: #111827;
-}
-.contact .row form .box:focus::-moz-placeholder {
-  color: #1f2937;
 }
 .contact .row form .box:focus::placeholder {
   color: #1f2937;
@@ -545,7 +541,7 @@ section {
   resize: none;
 }
 .contact .row form .btn {
-  background: #0EA5E9;
+  background: #0ea5e9;
   color: #fff;
 }
 .contact .row form .btn:hover {
@@ -563,47 +559,83 @@ section {
 }
 .try .code {
   flex: 1 1 40rem;
-  border: 2px solid #0EA5E9;
+  border: 2px solid #0ea5e9;
   height: 30rem;
+  position: relative;
+}
+.try .code #run {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  padding: 10px;
+  background-color: #0ea5e9;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+}
+.try .code #run:hover {
+  background-color: #0b83b9;
+}
+.try .code textarea {
+  resize: none;
+  width: 100%;
+  height: 100%;
+  background: #1f2937;
+  padding: 10px;
+  color: #fff;
+  font-family: monospace;
+  font-size: 16px;
 }
 .try .result {
   flex: 1 1 40rem;
-  border: 2px solid #0EA5E9;
+  border: 2px solid #0ea5e9;
   padding: 2rem;
   height: 30rem;
+  color: #fff;
+  font-size: 20px;
+  font-family: monospace;
 }
 
 .course_body {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  min-height: 50rem;
+  padding: 10rem;
+  gap: 5rem;
 }
-.course_body .ctitle {
+.course_body a {
   flex: 1 1 1cm;
-  border: 2px solid #0EA5E9;
-  height: 30rem;
+  text-decoration: none;
 }
-.course_body .ctitle h3 {
+.course_body .docs {
+  background: #172f51;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  min-height: 45rem;
+  padding: 5rem;
+}
+.course_body .docs:hover {
+  background: #224679;
+  cursor: pointer;
+}
+.course_body .docs:hover .icon,
+.course_body .docs:hover p {
+  transform: translateY(-5px);
+}
+.course_body .docs .icon {
+  font-size: 120px;
+  color: #eee;
+}
+.course_body .docs p {
   font-size: 3rem;
   text-transform: capitalize;
   color: #1f2937;
   text-decoration: none;
   color: #eee;
-  padding-bottom: 1rem;
-}
-.course_body .courses {
-  flex: 1 1 100rem;
-  border: 2px solid #0EA5E9;
-  padding: 2rem;
-  height: 30rem;
-}
-.course_body .courses h3 {
-  font-size: 3rem;
-  text-transform: capitalize;
-  color: #1f2937;
-  text-decoration: none;
-  color: #eee;
-  padding-bottom: 1rem;
 }
 
 .footer {
@@ -623,7 +655,7 @@ section {
   padding: 1rem 0;
 }
 .footer .box-container .box h3 i {
-  color: #0EA5E9;
+  color: #0ea5e9;
 }
 .footer .box-container .box .share {
   margin-top: 1rem;
@@ -633,7 +665,7 @@ section {
   width: 4.5rem;
   line-height: 4.5rem;
   font-size: 1.7rem;
-  background-color: #0EA5E9;
+  background-color: #0ea5e9;
   color: #fff;
   margin-right: 0.3rem;
   text-align: center;
@@ -652,7 +684,7 @@ section {
   display: block;
 }
 .footer .box-container .box .link:hover {
-  color: #0EA5E9;
+  color: #0ea5e9;
   text-decoration: underline;
 }
 .footer .box-container .box p {
@@ -667,7 +699,7 @@ section {
   width: 100%;
   padding: 1.2rem 1.4rem;
   font-size: 1.6rem;
-  border: 2px solid #0EA5E9;
+  border: 2px solid #0ea5e9;
   background-color: #eee;
   margin-bottom: 1rem;
 }
@@ -675,7 +707,7 @@ section {
   background-color: #172f51;
 }
 .footer .box-container .box .btn:hover {
-  background: #0EA5E9;
+  background: #0ea5e9;
   color: #fff;
 }
 .footer .credit {
@@ -686,7 +718,7 @@ section {
   text-transform: capitalize;
   color: #1f2937;
   text-decoration: none;
-  border-top: 2px solid #0EA5E9;
+  border-top: 2px solid #0ea5e9;
 }
 
 @media (max-width: 1200px) {
@@ -751,4 +783,69 @@ section {
   .about .content .about-title {
     font-size: 4rem;
   }
-}/*# sourceMappingURL=style.css.map */
+}
+.install {
+  color: #eee;
+  width: 80%;
+  margin: auto;
+  font-size: 18px;
+}
+.install h3 {
+  font-size: 26px;
+  text-transform: capitalize;
+  color: #1f2937;
+  text-decoration: none;
+  color: #eee;
+  padding-bottom: 10px;
+}
+.install code {
+  display: block;
+  background-color: #252a35;
+  font-family: monospace;
+  font-size: 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  margin-top: 15px;
+}
+.install code::before {
+  content: "$ ";
+}
+
+.ore-docs {
+  color: #eee;
+  width: 80%;
+  margin: auto;
+  font-size: 18px;
+}
+.ore-docs p {
+  line-height: 3rem;
+}
+.ore-docs h2 {
+  margin: 10px 0;
+}
+.ore-docs h3 {
+  font-size: 26px;
+  text-transform: capitalize;
+  color: #1f2937;
+  text-decoration: none;
+  color: #eee;
+  padding-bottom: 10px;
+}
+.ore-docs pre {
+  display: block;
+  background-color: #252a35;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 16px;
+}
+.ore-docs pre code {
+  padding: 0;
+}
+.ore-docs code {
+  font-family: monospace;
+  background-color: #252a35;
+  padding: 3px;
+}
+
+/*# sourceMappingURL=style.css.map */

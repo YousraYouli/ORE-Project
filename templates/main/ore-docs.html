@@ -78,10 +78,10 @@ function() {}  : FunctionObject
   It returns the name of the type as a string.</p>
 </blockquote>
 
-<pre><code class="language-lua">type(25) -- =&#62; "Numeric"
+<pre><code class="language-lua">type(25) -- =&#62; "Number"
 type("Hello World!") -- =&#62; "String"
 type(nil) -- =&#62; "Nil"
-type(func() {}) -- =&#62; "Function"
+type(func() {}) -- =&#62; "FunctionObject"
 </code></pre>
 
 <h3 id="nil">nil</h3>
@@ -97,7 +97,7 @@ type(func() {}) -- =&#62; "Function"
       <pre><code>true
 false</code></pre></p>
 
-<h3 id="numeric">Numeric</h3>
+<h3 id="numeric">Numbers</h3>
 
 <p>All Numeric types inside Ore are C++&#8217;s native <code>double</code> type.</p>
 
@@ -112,16 +112,16 @@ dec    = 10</code></pre></p>
 <pre><code class="language-lua">123.45689
 </code></pre>
 
-<p>A Numeric will through an exception if you pass the lower or upper limit of <code>double</code>.
+<p>A Numeric will throw an exception if you pass the lower or upper limit of <code>double</code>.
 The following REPL session elaborates this:</p>
 
-<p><img src="images/overflow.png" alt="Numeric literal overflowing" /></p>
+  <p><img src="{% static 'image/overflow.png' %}" alt="Numeric literal overflowing" /></p>
 
 <p>Operations such as <code>1 &#47; 0</code> will result in an exception.</p>
 
 <h3 id="string">String</h3>
 
-<p>A String represents an immutable sequence of UTF-8 characters.</p>
+<p>A String represents an immutable sequence of ASCII characters.</p>
 
 <p>It uses C++&#8217;s native <code>std::string</code> type underneath.</p>
 
@@ -183,7 +183,7 @@ Box["name"] -- =&#62; "mybox"
 
 <p>You can define a new function like this:</p>
 
-<pre><code class="language-javascript">functions foo() {
+<pre><code class="language-javascript">function foo() {
   return("hello world")
 }
 </code></pre>
@@ -286,7 +286,7 @@ do {
 <p>A <em>truthy</em> value is a value that is considered true for an <code>if</code> and <code>while</code> guard.
 A <em>falsey</em> value is a value that is considered false in those places.</p>
 
-<p>The only falsey values are <code>false</code> ,<code>nill</code> and <code>0</code>. Any other value is <em>truthy</em>.</p>
+<p>The only falsey values are <code>false</code> ,<code>nil</code> and <code>0</code>. Any other value is <em>truthy</em>.</p>
 
 <h2 id="types-and-methods">Types and methods</h2>
 
@@ -380,9 +380,8 @@ nil</code></pre>
 <p>When including a file, the contents of the <code>export</code> variable is then returned by the <code>require</code> call.</p>
 
 <p>Example:
-      <pre><code>module = import("module.so")
-cos = module.method 
-cos(5)</code></pre></p>
+      <pre><code>math = import("libmath.so")
+math.cos(5)</code></pre></p>
 
 <h2 id="command-line-arguments-and-flags">Command line arguments and flags</h2>
 
@@ -391,10 +390,10 @@ A list of these can be obtained by running <code>orepl -h</code> in the command 
 
 <p>You can pass flags via the following format</p>
 
-<pre><code class="language-bash">orepl input.ore -f flag
+<pre><code class="language-bash">orepl -d -p -g -a input.ore
 </code></pre>
 
-<p>Arguments which are not flags are passed to the program instead of the interpreter.</p>
+<p>Arguments after the input file name are passed to the program instead of the interpreter.</p>
 
 <pre><code class="language-bash">orepl input.ore arg1 arg2 arg3 
 </code></pre>
@@ -408,8 +407,6 @@ A list of these can be obtained by running <code>orepl -h</code> in the command 
 <p>You can invoke it by typing <code>orepl</code></p>
 
 <p>Here you can write Ore statements. Run them by pressing enter.</p>
-
-<p>The REPL provides a few <em>magic</em> variables which are specific to your current REPL session.</p>
 
 <h2 id="io">IO</h2>
 
